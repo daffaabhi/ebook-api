@@ -27,4 +27,6 @@ Route::put('/books/{id}', [BookController::class, 'update']);
 Route::delete('/books/{id}', [BookController::class, 'destroy']);
 */
 
-Route::resource('books', 'BookController');
+Route::resource('books', BookController::class)->except('create', 'edit');
+
+Route::resource('authors', AuthorController::class)->except('create', 'edit');
